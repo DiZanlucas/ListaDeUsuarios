@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.example.listadeusuarios.placeholder.PlaceholderContent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A fragment representing a list of Items.
  */
@@ -21,6 +24,7 @@ public class ItemFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
+
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
@@ -43,9 +47,11 @@ public class ItemFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
+
     }
 
     @Override
@@ -57,12 +63,18 @@ public class ItemFragment extends Fragment {
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
+            Usuario user = new Usuario("Carlos","2938923","carlos@gmail.com","9343849849", 78);
+            Usuario user1 = new Usuario("Jessica","12345945","jessica@gmail.com","8743849849", 34);
+            Usuario user2 = new Usuario("Marcos", "993049482", "marcos@gmail.com","83463374", "")
+            ArrayList<Usuario> usuarios = new ArrayList();
+            usuarios.add(0,user);
+            usuarios.add(1,user1);
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(usuarios));
         }
         return view;
     }

@@ -17,9 +17,9 @@ import java.util.List;
  */
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
 
-    private final List<PlaceholderItem> mValues;
+    private final List<Usuario> mValues;
 
-    public MyItemRecyclerViewAdapter(List<PlaceholderItem> items) {
+    public MyItemRecyclerViewAdapter(List<Usuario> items) {
         mValues = items;
     }
 
@@ -33,8 +33,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        //holder.mIdView.setText(mValues.get(position).id);
+        holder.mContentView.setText(mValues.get(position).nome+ " \n" +mValues.get(position).getCPF());
     }
 
     @Override
@@ -43,13 +43,13 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
+        //public final TextView mIdView;
         public final TextView mContentView;
-        public PlaceholderItem mItem;
+        public Usuario mItem;
 
     public ViewHolder(FragmentItemBinding binding) {
       super(binding.getRoot());
-      mIdView = binding.itemNumber;
+      //mIdView = binding.itemNumber;
       mContentView = binding.content;
     }
 
