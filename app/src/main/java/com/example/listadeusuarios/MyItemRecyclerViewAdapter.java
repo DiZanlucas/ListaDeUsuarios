@@ -19,6 +19,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
     private final List<Usuario> mValues;
 
+
     public MyItemRecyclerViewAdapter(List<Usuario> items) {
         mValues = items;
     }
@@ -39,9 +40,10 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.mContentView.setText(mValues.get(position).nome+ " \n" +mValues.get(position).getCPF() +" " + mValues.get(position).getIdade());
+                holder.mContentView.setText(mValues.get(position).nome+ " \nCPF: " +mValues.get(position).getCPF() + "\nIdade: " + mValues.get(position).getIdade()+ "\ne-mail: " + mValues.get(position).getEmail()+ "\nTelefone: " + mValues.get(position).getTelefone());
             }
         });
+
     }
 
     @Override
@@ -65,4 +67,5 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             return super.toString() + " '" + mContentView.getText() + "'";
         }
     }
+
 }

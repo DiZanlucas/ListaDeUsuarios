@@ -66,14 +66,14 @@ public class ItemFragment extends Fragment {
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
-            
+
             adicionaUsuarios("Carlos","2938923","carlos@gmail.com","9343849849", 78);
             adicionaUsuarios("Jessica","12345945","jessica@gmail.com","8743849849", 34);
             adicionaUsuarios("Marcos", "993049482", "marcos@gmail.com","83463374", 23);
             adicionaUsuarios("Joana","07387870293","joana@gmail.com","9343897493", 67);
             adicionaUsuarios("Leticia","3049810834","leticia@gmail.com","873948939", 25);
             adicionaUsuarios("Felipe", "0938401943", "felipe@gmail.com","99947434", 22);
-            adicionaUsuarios("Joao","3481938434","joao@gmail.com","93438499434", 45);
+            adicionaUsuarios("João","3481938434","joao@gmail.com","93438499434", 45);
             adicionaUsuarios("Pedro","0293810983","pedro@gmail.com","884749849", 34);
             adicionaUsuarios("Astrid", "938743497", "astrid@gmail.com","8346334094", 23);
             adicionaUsuarios("Harry","38920938","harry@gmail.com","93438345", 56);
